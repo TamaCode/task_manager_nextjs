@@ -1,14 +1,14 @@
 import { TaskContext } from "../context/taskContext";
 import { useContext } from "react";
+import Layout from "../components/Layout";
 
 const Home = () => {
-  const {test} = useContext(TaskContext)
-  console.log(test)
+  const {} = useContext(TaskContext);
   return (
-    <div className="m-10">
-      Hello World
-    </div>
+    <Layout>
+      <div className="m-10">Hello World</div>
+    </Layout>
   );
-}
- 
+};
+
 export default Home;
