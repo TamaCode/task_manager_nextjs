@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="h-screen bg-gray-900 text-white">
-      <header className="flex items-center  bg-gray-800 flex px-28 py-5">
+      <header className="flex items-center  bg-gray-800 px-28 py-5">
         <Link href="/">
           <h1 className="font-black text-lg">Task App</h1>
         </Link>
