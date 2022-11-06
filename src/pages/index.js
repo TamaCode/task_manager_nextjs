@@ -2,9 +2,11 @@ import { TaskContext } from "../context/taskContext";
 import { useContext } from "react";
 import Layout from "../components/Layout";
 import { VscTrash } from "react-icons/vsc";
+import { useRouter } from "next/router";
 
 const Home = () => {
   const { tasks } = useContext(TaskContext);
+  const {push} = useRouter()
 
   return (
     <Layout>
@@ -17,6 +19,7 @@ const Home = () => {
               <div
                 key={index}
                 className="bg-gray-700 hover:bg-gray-600 cursor-pointer px-20 py-5 m-2 flex justify-start items-center"
+                onClick={() => push(`/edit/${task.id}`)}
               >
                 <span className="text-5xl mr-5">{index}</span>
                 <div className="w-full">

@@ -10,8 +10,16 @@ export const TasksProvider = ({ children }) => {
     setTasks([...tasks, { title, description, id: uuid() }]);
   };
 
+  const updateTask = (id, updatedTask) => {
+    setTasks([
+      ...tasks.map((task) =>
+        task.id === id ? { ...task, ...updatedTask } : task
+      ),
+    ]);
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, createTask }}>
+    <TaskContext.Provider value={{ tasks, createTask, updateTask }}>
       {children}
     </TaskContext.Provider>
   );
