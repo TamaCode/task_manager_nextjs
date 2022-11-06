@@ -6,11 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-css": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/globals.css --watch"
   },
   "dependencies": {
     "next": "13.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.2"
   }
 }
