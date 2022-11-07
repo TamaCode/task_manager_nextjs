@@ -5,7 +5,7 @@ import { VscTrash } from "react-icons/vsc";
 import { useRouter } from "next/router";
 
 const Home = () => {
-  const { tasks } = useContext(TaskContext);
+  const { tasks, deleteTask } = useContext(TaskContext);
   const {push} = useRouter()
 
   return (
@@ -25,7 +25,10 @@ const Home = () => {
                 <div className="w-full">
                   <div className="flex justify-between">
                     <h1 className="font-bold">{task.title}</h1>
-                    <button className="bg-red-700 hover:bg-red-600 px-3 py-1 inline-flex items-center">
+                    <button className="bg-red-700 hover:bg-red-600 px-3 py-1 inline-flex items-center" onClick={(e) =>{
+                      e.stopPropagation();
+                      deleteTask(task.id)
+                    }}>
                       <VscTrash className="mr-2"/>
                       Delete
                     </button>

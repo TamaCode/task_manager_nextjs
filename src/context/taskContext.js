@@ -18,8 +18,12 @@ export const TasksProvider = ({ children }) => {
     ]);
   };
 
+  const deleteTask = (id) => {
+    setTasks([...tasks.filter(task => task.id !== id)])
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, createTask, updateTask }}>
+    <TaskContext.Provider value={{ tasks, createTask, updateTask, deleteTask }}>
       {children}
     </TaskContext.Provider>
   );
